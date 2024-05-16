@@ -5,7 +5,7 @@ const HomePage = () => {
   return (
     <div className={css.container}>
       <div>
-        <p className={css.helloText}>Welcome to the caravan rental website</p>
+        <p className={css.helloText}>Welcome to the events</p>
         <NavLink to="/catalog">
           <div className={css.wrap}>
             <button className={css.button}>Catalog</button>
