@@ -4,8 +4,7 @@ body {
   font-family: inter;
   line-height: 1.5;
 background-color: lightgrey;
-    background-image: url('./images/small_motorhome.jpg');
-    background-size:cover;
+    background-image: url('./images/job.jpg');
 }
 
 h1,

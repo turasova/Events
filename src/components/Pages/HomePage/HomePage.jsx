@@ -6,11 +6,12 @@ const HomePage = () => {
     <div className={css.container}>
       <div>
         <p className={css.helloText}>Welcome to the events</p>
-        <NavLink to="/events">
-          <div className={css.wrap}>
+
+        <div className={css.wrap}>
+          <NavLink to="/events">
             <button className={css.button}>Events</button>
-          </div>
-        </NavLink>
+          </NavLink>
+        </div>
       </div>
     </div>
   );

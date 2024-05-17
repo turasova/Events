@@ -6,6 +6,6 @@ const carsInstance = axios.create({
 
 export const fetchAllEvents = async () => {
   const { data } = await carsInstance.get(`/events`);
-  console.log(data);
+  // console.log(data);
   return data;
 };

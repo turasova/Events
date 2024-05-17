@@ -3,7 +3,7 @@ import css from './modal.module.css';
 import { AiOutlineClose } from 'react-icons/ai';
 import EventRegistrationForm from 'components/Form/Form';
 
-export const Modal = ({ onCloseModal, onSubmit }) => {
+export const Modal = ({ onCloseModal }) => {
   // useEffect(() => {
   //   fetchCars();
   // }, []);
@@ -32,7 +32,7 @@ export const Modal = ({ onCloseModal, onSubmit }) => {
         <AiOutlineClose className={css.close} onClick={onCloseModal} />
         <div className={css.form_container}>
           <h1 className={css.title}>Event registration</h1>
-          <EventRegistrationForm onSubmit={onSubmit} />
+          <EventRegistrationForm />
         </div>
       </div>
     </div>

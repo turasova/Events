@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import css from './CardEvent.module.css';
 import { Modal } from 'components/Modal/modal';
+import { NavLink } from 'react-router-dom';
 
 export const CardEvent = ({ events }) => {
   const [isShowModal, setIsShowModal] = useState(false);
@@ -24,16 +25,18 @@ export const CardEvent = ({ events }) => {
 
           <div className={css.button_container}>
             <button type="button" onClick={onOpenModal}>
-              {isShowModal && (
-                <Modal
-                  modal={modal}
-                  onCloseModal={onCloseModal}
-                  onOpenModal={onOpenModal}
-                />
-              )}
               Register
             </button>
-            <button type="button">View</button>
+            {isShowModal && (
+              <Modal
+                modal={modal}
+                onCloseModal={onCloseModal}
+                onOpenModal={onOpenModal}
+              />
+            )}
+            <NavLink to="/participants">
+              <button type="button">View</button>
+            </NavLink>
           </div>
         </li>
       ))}

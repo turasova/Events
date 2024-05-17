@@ -5,7 +5,7 @@ import { selectEvents } from 'store/selectors';
 import { getAllEventsThunk } from 'store/thunks';
 import css from './CardEventList.module.css';
 
-export const CardEventList = ({ onOpenModal, onCloseModal }) => {
+export const CardEventList = () => {
   const dispatch = useDispatch();
 
   const events = useSelector(selectEvents);
@@ -18,8 +18,8 @@ export const CardEventList = ({ onOpenModal, onCloseModal }) => {
     <ul className={css.list}>
       <CardEvent
         events={events}
-        onOpenModal={onOpenModal}
-        onCloseModal={onCloseModal}
+        // onOpenModal={onOpenModal}
+        // onCloseModal={onCloseModal}
       />
     </ul>
   );
