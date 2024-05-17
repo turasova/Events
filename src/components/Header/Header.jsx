@@ -24,22 +24,22 @@ export const Header = () => {
           <ul className={css.auth}>
             <li>
               <NavLink
-                to="/catalog"
+                to="/events"
                 className={({ isActive }) =>
                   `${css.textLink} ${isActive ? css.active : ''}`
                 }
               >
-                Catalog
+                Events
               </NavLink>
             </li>
             <li>
               <NavLink
-                to="/favorites"
+                to="/participants"
                 className={({ isActive }) =>
                   `${css.textLink} ${isActive ? css.active : ''}`
                 }
               >
-                Favorites
+                Participants
               </NavLink>
             </li>
           </ul>

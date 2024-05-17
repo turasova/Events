@@ -4,8 +4,10 @@ import { Layout } from './Layout/Layout';
 import { Loader } from './Loader/loader';
 
 const HomePage = lazy(() => import('./Pages/HomePage/HomePage'));
-const CarsPage = lazy(() => import('./Pages/CarsPage/CarsPage'));
-const FavoritesPage = lazy(() => import('./Pages/FavoritesPage/FavoritesPage'));
+const EventsPage = lazy(() => import('./Pages/EventsPage/EventsPage'));
+const ParticipantsPage = lazy(() =>
+  import('./Pages/ParticipantsPage/ParticipantsPage')
+);
 
 export const App = () => {
   return (
@@ -13,8 +15,8 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path="/catalog" element={<CarsPage />} />
-          <Route path="/favorites" element={<FavoritesPage />} />
+          <Route path="/events" element={<EventsPage />} />
+          <Route path="/participants" element={<ParticipantsPage />} />
           <Route path="*" element={<Navigate to="/" />} />
         </Route>
       </Routes>

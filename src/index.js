@@ -9,7 +9,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/Rent_a_car">
+    <BrowserRouter>
       <PersistGate persistor={persistor}>
         <Provider store={store}>
           <App />

@@ -12,16 +12,16 @@ import {
   persistReducer,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import { carsReducer } from './carSlice';
+import { eventsReducer } from './eventSlice';
 
 const persistConfig = {
-  key: 'cars',
+  key: 'events',
   storage,
 };
 
 export const store = configureStore({
   reducer: {
-    cars: persistReducer(persistConfig, carsReducer),
+    events: persistReducer(persistConfig, eventsReducer),
   },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({

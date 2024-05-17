@@ -6,9 +6,9 @@ const HomePage = () => {
     <div className={css.container}>
       <div>
         <p className={css.helloText}>Welcome to the events</p>
-        <NavLink to="/catalog">
+        <NavLink to="/events">
           <div className={css.wrap}>
-            <button className={css.button}>Catalog</button>
+            <button className={css.button}>Events</button>
           </div>
         </NavLink>
       </div>

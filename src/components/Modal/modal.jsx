@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import css from './modal.module.css';
-import { fetchCars } from 'service/getCarsApi';
+import { fetchCars } from 'service/fetchAllEvents';
 import { DetailsCar } from 'components/DetailsCar/DetailsCar';
 import { AiOutlineClose } from 'react-icons/ai';
 //import Reviews from 'components/Reviews/Reviews';

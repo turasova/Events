@@ -1,94 +1,65 @@
-//import { useDispatch } from 'react-redux';
-import css from './Form.module.css';
-import { useState } from 'react';
-// import Notiflix from 'notiflix';
+import React, { useState } from 'react';
 
-export const Form = () => {
-  const [name, setName] = useState('');
+function EventRegistrationForm({ onSubmit }) {
+  const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
-  const [date, setDate] = useState('');
-
-  //   const dispatch = useDispatch();
-
-  const handleChange = e => {
-    const { name, value } = e.currentTarget;
-    switch (name) {
-      case 'name':
-        setName(value);
-        break;
-      case 'email':
-        setEmail(value);
-        break;
-      case 'date':
-        setDate(value);
-        break;
-      default:
-        break;
-    }
-  };
+  const [dateOfBirth, setDateOfBirth] = useState('');
 
   const handleSubmit = e => {
     e.preventDefault();
-    reset();
-  };
-
-  const reset = () => {
-    setName('');
-    setEmail('');
-    setDate('');
+    onSubmit({ fullName, email, dateOfBirth });
   };
 
   return (
-    <div className={css.form_container}>
-      <h2 className={css.form_title}>Book your campervan now</h2>
-      <p className={css.form_text}>
-        Stay connected! We are always ready to help you.
-      </p>
-      <form className={css.form}>
+    <form onSubmit={handleSubmit}>
+      <div>
+        <label htmlFor="fullName">Full Name:</label>
+        <input
+          type="text"
+          id="fullName"
+          value={fullName}
+          onChange={e => setFullName(e.target.value)}
+          required
+        />
+      </div>
+      <div>
+        <label htmlFor="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+          required
+        />
+      </div>
+      <div>
+        <label htmlFor="dateOfBirth">Date of Birth:</label>
+        <input
+          type="date"
+          id="dateOfBirth"
+          value={dateOfBirth}
+          onChange={e => setDateOfBirth(e.target.value)}
+          required
+        />
+        <p>Where did you hear about this event?</p>
+
         <label>
-          <input
-            className={css.input}
-            type="text"
-            name="name"
-            value={name}
-            required
-            onChange={handleChange}
-            placeholder="Name"
-          />
+          <input type="radio" name="question" value="media" />
+          Social media
         </label>
         <label>
-          <input
-            className={css.input}
-            type="email"
-            name="email"
-            value={email}
-            required
-            onChange={handleChange}
-            placeholder="Email"
-          />
+          <input type="radio" name="question" value="friends" />
+          Friends
         </label>
         <label>
-          <input
-            className={css.input_date}
-            type="date"
-            name="date"
-            value={date}
-            required
-            onChange={handleChange}
-            placeholder="Booking date"
-          />
+          <input type="radio" name="question" value="myself" />
+          Found myself
         </label>
-        <textarea
-          className={css.textarea}
-          rows="5"
-          cols="33"
-          onChange={handleChange}
-          placeholder="Comment"
-        ></textarea>
-        <button className={css.button} type="submit" onSubmit={handleSubmit}>
-          Send
-        </button>
-      </form>
-    </div>
+      </div>
+
+      <button type="submit">Send</button>
+    </form>
   );
-};
+}
+
+export default EventRegistrationForm;
