@@ -1,15 +1,13 @@
 import { useEffect } from 'react';
 import css from './modal.module.css';
-import { fetchCars } from 'service/fetchAllEvents';
-import { DetailsCar } from 'components/DetailsCar/DetailsCar';
 import { AiOutlineClose } from 'react-icons/ai';
-//import Reviews from 'components/Reviews/Reviews';
+import EventRegistrationForm from 'components/Form/Form';
 
-export const Modal = ({ car, onCloseModal }) => {
-  useEffect(() => {
-    fetchCars();
-  }, []);
-  console.log();
+export const Modal = ({ onCloseModal, onSubmit }) => {
+  // useEffect(() => {
+  //   fetchCars();
+  // }, []);
+  // console.log();
 
   useEffect(() => {
     const handleEscClose = evt => {
@@ -32,7 +30,10 @@ export const Modal = ({ car, onCloseModal }) => {
     <div className={css.overlay} onClick={handleOverlayClose}>
       <div className={css.modal}>
         <AiOutlineClose className={css.close} onClick={onCloseModal} />
-        <DetailsCar car={car} />
+        <div className={css.form_container}>
+          <h1 className={css.title}>Event registration</h1>
+          <EventRegistrationForm onSubmit={onSubmit} />
+        </div>
       </div>
     </div>
   );

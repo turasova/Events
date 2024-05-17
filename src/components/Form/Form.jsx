@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import css from './Form.module.css';
 
 function EventRegistrationForm({ onSubmit }) {
   const [fullName, setFullName] = useState('');
@@ -12,9 +13,10 @@ function EventRegistrationForm({ onSubmit }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
+      <div className={css.label_text}>
         <label htmlFor="fullName">Full Name:</label>
         <input
+          className={css.input}
           type="text"
           id="fullName"
           value={fullName}
@@ -22,9 +24,10 @@ function EventRegistrationForm({ onSubmit }) {
           required
         />
       </div>
-      <div>
+      <div className={css.label_text}>
         <label htmlFor="email">Email:</label>
         <input
+          className={css.input}
           type="email"
           id="email"
           value={email}
@@ -32,32 +35,50 @@ function EventRegistrationForm({ onSubmit }) {
           required
         />
       </div>
-      <div>
+      <div className={css.label_text}>
         <label htmlFor="dateOfBirth">Date of Birth:</label>
         <input
+          className={css.input_date}
           type="date"
           id="dateOfBirth"
           value={dateOfBirth}
           onChange={e => setDateOfBirth(e.target.value)}
           required
         />
-        <p>Where did you hear about this event?</p>
+        <p className={css.text}>Where did you hear about this event?</p>
 
-        <label>
-          <input type="radio" name="question" value="media" />
+        <label className={css.radio_label}>
+          <input
+            type="radio"
+            name="question"
+            value="media"
+            className={css.radio}
+          />
           Social media
         </label>
-        <label>
-          <input type="radio" name="question" value="friends" />
+        <label className={css.radio_label}>
+          <input
+            type="radio"
+            name="question"
+            value="friends"
+            className={css.radio}
+          />
           Friends
         </label>
-        <label>
-          <input type="radio" name="question" value="myself" />
+        <label className={css.radio_label}>
+          <input
+            type="radio"
+            name="question"
+            value="myself"
+            className={css.radio}
+          />
           Found myself
         </label>
       </div>
 
-      <button type="submit">Send</button>
+      <button type="submit" className={css.button}>
+        Send
+      </button>
     </form>
   );
 }

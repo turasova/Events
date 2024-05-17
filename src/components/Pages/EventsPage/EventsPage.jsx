@@ -8,7 +8,10 @@ const EventsPage = () => {
       <div className={css.container}>
         <h1 className={css.title}>Events</h1>
         <div>
-          <CardEventList />
+          <CardEventList
+          // onOpenModal={onOpenModal}
+          // onCloseModal={onCloseModal}
+          />
         </div>
       </div>
     </>

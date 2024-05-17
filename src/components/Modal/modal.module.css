@@ -3,9 +3,7 @@ width: 1000px;
 height: 700px;
 border-radius: 20px;
 background: #FFF;
-overflow-y: auto;
 position: relative;
-  
 }
 .overlay {
     position: fixed;
@@ -16,13 +14,21 @@ position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(196, 183, 183, 0.5);
     z-index: 1200;
 }
 .close {
     width: 32px;
     height: 32px;
-    margin-left: 900px;
+    margin-left: 400px;
     position: absolute;
     margin-top: 40px;
+}
+.form_container {
+    margin: 100px;
+
+   
+}
+.title{
+    text-align: start;
 }
