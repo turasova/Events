@@ -1,0 +1,12 @@
+.container {
+    margin-top: 100px;
+    border: 2px solid grey;
+    display: flex;
+    flex-wrap: wrap;
+    width: 350px;
+    flex-direction: column;
+    background-color:rgb(211, 240, 241);
+    border-radius: 10px;
+    padding: 2cqi;
+    list-style: none;
+}

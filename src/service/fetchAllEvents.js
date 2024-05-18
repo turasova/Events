@@ -9,3 +9,9 @@ export const fetchAllEvents = async () => {
   // console.log(data);
   return data;
 };
+
+// export const fetchEventsId = async id => {
+//   const { data } = await carsInstance.get(`/events?id=${id}`);
+//   console.log(data);
+//   return data;
+// };
