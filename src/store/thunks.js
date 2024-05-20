@@ -14,12 +14,12 @@ export const getAllEventsThunk = createAsyncThunk(
   }
 );
 
-// export const addParticipant = createAsyncThunk(
-//   'participant/addParticipant',
+// export const addParticipantThunk = createAsyncThunk(
+//   'participants/addParticipant',
 //   async ({ id }, thunkApi) => {
 //     try {
-//       const data = await fetchEventsId({ id });
-//       // console.log(data);
+//       const data = await fetchAllEvents({ id });
+//       console.log(data);
 //       return data;
 //     } catch (error) {
 //       return thunkApi.rejectWithValue(error.message);

@@ -21,7 +21,11 @@ const eventInitialState = {
 const eventsSlice = createSlice({
   name: 'events',
   initialState: eventInitialState,
-  reducers: {},
+  reducers: {
+    addParticipant: (state, { payload }) => {
+      state.participants = payload;
+    },
+  },
   extraReducers: builder => {
     builder
 
@@ -33,5 +37,6 @@ const eventsSlice = createSlice({
   },
 });
 
+export const { addParticipant } = eventsSlice.actions;
 export const eventsReducer = eventsSlice.reducer;
 export const getIsLoading = state => state.events.isLoading;

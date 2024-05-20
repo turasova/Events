@@ -1,26 +1,37 @@
-import { useEffect, useState } from 'react';
 import css from './ParticipantPage.module.css';
+import { useSelector } from 'react-redux';
+import { selectParticipants } from 'store/selectors';
 
 const ParticipantsPage = () => {
-  const [participants, setParticipants] = useState([]);
+  const participants = useSelector(selectParticipants);
 
-  useEffect(() => {
-    const storedName = localStorage.getItem('name');
-    const storedEmail = localStorage.getItem('email');
-    console.log(storedEmail);
+  console.log(participants);
 
-    console.log(storedName);
+  if (!Array.isArray(participants)) {
+    return <div>Error: Participants data is not an array.</div>;
+  }
 
-    const name = JSON.parse(storedName);
-    const email = JSON.parse(storedEmail);
+  // useEffect(() => {
+  //   setParticipants(allParticipants);
+  // }, [allParticipants]);
 
-    if (name && email) {
-      setParticipants(prevParticipants => [
-        ...prevParticipants,
-        { name, email },
-      ]);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const storedName = localStorage.getItem('name');
+  //   const storedEmail = localStorage.getItem('email');
+  //   console.log(storedEmail);
+
+  //   console.log(storedName);
+
+  //   const name = JSON.parse(storedName);
+  //   const email = JSON.parse(storedEmail);
+
+  //   if (name && email) {
+  //     setParticipants(prevParticipants => [
+  //       ...prevParticipants,
+  //       { name, email },
+  //     ]);
+  //   }
+  // }, []);
 
   // const formData = [name, email];
   // console.log(formData);
@@ -40,7 +51,7 @@ const ParticipantsPage = () => {
 
   return (
     <div>
-      {participants.map((participant, index) => (
+      {participants?.map((participant, index) => (
         <ul key={index} className={css.container}>
           <li>Name: {participant.name}</li>
           <li>Email: {participant.email}</li>
