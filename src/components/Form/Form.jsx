@@ -44,7 +44,7 @@ const EventRegistrationForm = () => {
 
     reset();
 
-    window.location.href = '/events';
+    window.location.href = '/Events/events';
   };
   const reset = () => {
     setName('');
